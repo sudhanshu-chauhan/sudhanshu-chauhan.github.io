@@ -38,6 +38,7 @@
     <!-- ******HEADER****** -->
     <header class="header">
         <div class="container clearfix">
+			<div id="like_button_container"> </div>
             <img class="profile-image img-fluid float-left" style="border-radius:50%;" src="assets/images/profile.jpg"
                 alt="Sudhanshu Chauhan" />
             <div class="profile-content float-left">
@@ -86,7 +87,7 @@
                 <section class="latest section">
                     <div class="section-inner">
                         <h2 class="heading">Latest Projects</h2>
-                        <div class="content">
+                        <div id="project-content" class="content">
 
                             <div class="item featured text-center">
                                 <h3 class="title"><a
@@ -393,8 +394,14 @@
                     <!--//section-inner-->
                 </aside>
                 <!--//section-->
+                <aside class="blog aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Latest Blog Posts</h2>
+                        <div id="rss-feeds" class="content">
 
-
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
 
                 <aside class="list music aside section">
                     <div class="section-inner">
@@ -507,6 +514,9 @@
     <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/plugins/popper.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/plugins/react.development.js"></script>
+    <script src="assets/plugins/react-dom.development.js"></script>
+    <script src="assets/plugins/babel.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
     <!-- github calendar plugin -->
     <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
@@ -516,6 +526,7 @@
     <script type="text/javascript" src="assets/plugins/github-activity/github-activity-0.1.5.min.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/babel" src="assets/js/react-handler.js"></script>
 </body>
 
 </html>
