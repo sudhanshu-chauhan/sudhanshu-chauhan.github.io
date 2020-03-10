@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
         // inner template for each entry
         // default: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>'
         // valid values: any string
-        entryTemplate: '<div class="item"><h3 class="title"><a href="{urlblog}" target="_blank">{title}</a></h3><div><p>{shortBodyPlain}...</p></div></div>'
+        entryTemplate: '<div class="item"><h3 class="title"><a href="{blogurl}" target="_blank">{title}</a></h3><div><p>{shortBodyPlain}...</p></div></div>'
         }
     );
     
