@@ -1,17 +1,17 @@
-{% for handle in site.data.handles %}
-<a href="{{ handle.value }}">{{ handle.name }}</a>&nbsp;|&nbsp;
-{% endfor %}
+[github](https://www.github.com/sudhanshu-chauhan) | [twitter](https://https://twitter.com/Sud_daemon) | mailbox.sud@gmail.com
 
 ## About Me
-- A Data Engineer / Architect based out of Mumbai, India.
-- Over 10 years of experience in following areas:
-  - Backend Development, Data Engineering / Architecture, Big Data.
-  - Infosec, Devops, Software Architecture, IIoT.
-  - Cloud Infrastructure Setup, Data Streaming / Processing.
-- My hobbies includes working out, hiking, harmonica and PC games.
-- In my free time, you can find me refactoring execisting code,
-  playing games, doodling or just playing harmonica.
-- If you know about both Richard Stallman and Linus tourvald, then we alreadt are 
-  good friends.
+
+A Data Engineer / Architect based out of Mumbai, India.
+Over 10 years of experience in different areas like Backend Development, 
+Data Engineering / Architecture, Devops, Software Architecture, IIoT, 
+Cloud Infrastructure Setup, Data Streaming / Processing etc.
+
+I also consult in different organizations to handle their data engineering
+and define their cloud infrastructure as per their cost, needs and data.
+
+My hobbies includes working out, hiking, harmonica and PC games and in my 
+free time, you can find me refactoring execisting code,playing games, doodling 
+or just playing harmonica.
 
 ### Currently Active Projects
