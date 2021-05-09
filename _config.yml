@@ -3,5 +3,7 @@ theme: jekyll-theme-cayman
 title: Sudhanshu Chauhan
 description: Data Architect / Engineer & Data Science Enthusiast
 
-github: sudhanshu-chauhan
-twitter: Sud_daemon
+social-network-links:
+  email: mailbox.sud@gmail.com
+  github: sudhanshu-chauhan
+  twitter: Sud_daemon
