@@ -1,10 +1,6 @@
 <ul>
-{% for member in site.data.handles %}
-  <li>
-    <span>
-      {{ member.name }} :: {{ member.value }}
-      </span>
-  </li>
+{% for handle in site.data.handles %}
+<a href="{{ handle.value }}">{{ handle.name }}</a>&nbsp;|&nbsp;
 {% endfor %}
 </ul>
 ## Welcome to GitHub Pages
