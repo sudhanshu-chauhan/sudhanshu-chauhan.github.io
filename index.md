@@ -1,3 +1,12 @@
+<ul>
+{% for member in site.data.handles %}
+  <li>
+    <span>
+      {{ member.name }} :: {{ member.value }}
+      </span>
+  </li>
+{% endfor %}
+</ul>
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/sudhanshu-chauhan/sudhanshu-chauhan.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
