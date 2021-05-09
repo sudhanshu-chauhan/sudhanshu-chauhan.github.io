@@ -1,4 +1,4 @@
-[github](https://www.github.com/sudhanshu-chauhan)  [twitter](https://twitter.com/Sud_daemon)  mailbox.sud@gmail.com
+[github](https://www.github.com/sudhanshu-chauhan) . [twitter](https://twitter.com/Sud_daemon) . mailbox.sud@gmail.com
 
 ## About Me
 
