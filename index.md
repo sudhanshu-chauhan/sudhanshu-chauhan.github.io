@@ -13,6 +13,6 @@ My hobbies includes working out, harmonica, writing new code or refactoring exis
 code.
 
 ### Currently Active Projects
-- [Simula IIOT](https://github.com/sudhanshu-chauhan/simula_iiot)
-A simulation of IIOT edge and cloud infrastructure to simulate different scenarios
-that typically occurs in IIOT ecosystem.
+- [Simula IIoT](https://github.com/sudhanshu-chauhan/simula_iiot):
+A simulation of IIoT edge and cloud infrastructure to simulate different scenarios
+that typically occurs in an IIoT ecosystem.
