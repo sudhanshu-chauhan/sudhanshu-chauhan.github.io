@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudhanshu Chauhan - Backend & Data Engineering Leader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 50%, #312e81 100%);
+            color: white;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profile-pic-container {
+            flex-shrink: 0;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .header-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 25px;
+            font-weight: 500;
+            color: #c7d2fe;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        nav {
+            background: var(--bg-card);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--border);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 18px 30px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a:hover::after {
+            width: 80%;
+        }
+
+        section {
+            background: var(--bg-card);
+            margin: 40px 0;
+            padding: 70px 0;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        section .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1em;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15);
+            border-color: var(--primary);
+        }
+
+        .skill-category h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h3::before {
+            content: '▸';
+            color: var(--primary);
+            font-size: 1.3em;
+        }
+
+        .skill-category p {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.7;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 35px;
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+            border-color: var(--primary);
+        }
+
+        .project-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .blog-posts {
+            max-width: 900px;
+            margin: 30px auto 0;
+        }
+
+        .blog-post {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 35px;
+            margin-bottom: 25px;
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-post::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, var(--secondary), var(--accent));
+        }
+
+        .blog-post:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.15);
+            border-color: var(--secondary);
+        }
+
+        .blog-post h3 {
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .blog-post .date {
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .blog-post p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 60px;
+        }
+
+        footer p {
+            opacity: 0.9;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 968px) {
+            .header-content {
+                text-align: center;
+            }
+
+            .header-text {
+                text-align: center;
+            }
+
+            .contact-links {
+                justify-content: center;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                font-size: 56px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                padding: 15px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-pic-container">
+                    <div class="profile-pic">SC</div>
+                </div>
+                <div class="header-text">
+                    <h1>Sudhanshu Chauhan</h1>
+                    <p class="tagline">Backend & Data Engineering Leader | 14+ Years Experience</p>
+                    <div class="contact-links">
+                        <a href="mailto:mailbox.sud@gmail.com">✉️ Email</a>
+                        <a href="https://github.com/sudhanshu-chauhan" target="_blank">💻 GitHub</a>
+                        <a href="https://www.linkedin.com/in/sudhanshu-chauhan-59a398114/" target="_blank">🔗 LinkedIn</a>
+                        <a href="tel:+919108496660">📱 Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="section-subtitle">Architecting scalable solutions across cloud platforms</p>
+            <div class="about-content">
+                <p>
+                    Dynamic Backend and Data Engineering leader with 14 years of hands-on experience architecting and optimizing large-scale, production-grade data pipelines, microservices, and ML workflows across AWS, GCP, Azure, and Informatica.
+                </p>
+                <p>
+                    Demonstrated expertise integrating and deploying LLMs and GenAI models in real-world scenarios, leveraging SageMaker, FastAPI, Golang, and custom Python workflows for advanced solutions in retail automation, image analytics, recommendation systems, and vector-based retrieval.
+                </p>
+                <p>
+                    Adept at delivering end-to-end cloud-native systems, orchestrating high-performance data operations, and translating complex business needs into robust, scalable technical architectures.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">14+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Technologies Mastered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Cloud Platforms</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Expertise</h2>
+            <p class="section-subtitle">Full-stack proficiency in modern technologies</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend & APIs</h3>
+                    <p>Golang (Gorilla/Mux) • Java/Kotlin (Spring) • FastAPI • Express.js • Django • Flask</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud Platforms</h3>
+                    <p>AWS (Lambda, Redshift, SageMaker, ECS, Glue) • Azure (IoTHub, ML Studio) • GCP</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Big Data & ETL</h3>
+                    <p>Spark/PySpark • Databricks • Snowflake • Airflow • DBT • AWS Glue • DMS</p>
+                </div>
+                <div class="skill-category">
+                    <h3>AI/ML & GenAI</h3>
+                    <p>LLMs • PyTorch • AWS SageMaker • Generative AI • LangChain • Vector DBs (Pinecone)</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <p>PostgreSQL • MySQL • MongoDB • Redis • Apache Druid</p>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <p>Docker • Terraform • Jenkins • GitHub Actions • Grafana • PowerBI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Current Projects</h2>
+            <p class="section-subtitle">Building cutting-edge solutions</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>LLM Integration Platform</h3>
+                    <p>Building Golang-based REST APIs for in-house LLM models with FastAPI backend for data pipeline orchestration.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Golang</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">LLM</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Image Classification Pipeline</h3>
+                    <p>ML-powered image classification system using CLIP model and Pinecone vector database with AWS Lambda integration.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AWS Lambda</span>
+                        <span class="tech-tag">CLIP</span>
+                        <span class="tech-tag">Pinecone</span>
+                        <span class="tech-tag">Golang</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Data Lake Architecture</h3>
+                    <p>Designing scalable data lake infrastructure from scratch with automated ETL workflows and monitoring.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Airflow</span>
+                        <span class="tech-tag">DBT</span>
+                        <span class="tech-tag">Spark</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2>Blog</h2>
+            <p class="section-subtitle">Sharing insights and experiences</p>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <h3>Coming Soon: Optimizing Golang APIs for High-Throughput Systems</h3>
+                    <div class="date">Expected: November 2025</div>
+                    <p>Exploring patterns and best practices for building high-performance REST APIs in Go, with real-world benchmarks and optimization techniques.</p>
+                </div>
+                <div class="blog-post">
+                    <h3>Coming Soon: LLM Integration Patterns in Production</h3>
+                    <div class="date">Expected: December 2025</div>
+                    <p>A deep dive into deploying and scaling Large Language Models in production environments, covering infrastructure, monitoring, and cost optimization.</p>
+                </div>
+                <div class="blog-post">
+                    <h3>Coming Soon: From Monolith to Microservices</h3>
+                    <div class="date">Expected: January 2026</div>
+                    <p>Lessons learned from migrating legacy systems to cloud-native microservices architecture, including challenges and solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sudhanshu Chauhan. All rights reserved.</p>
+            <p>Based in Lucknow, India</p>
+        </div>
+    </footer>
+</body>
+</html>
